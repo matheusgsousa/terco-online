@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
-
-import { Geist, Geist_Mono } from "next/font/google";
-
+import { type_second, type_primary, type_mono } from "@/functions/fonts";
 import "../index.css";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "terco-online",
@@ -28,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${type_primary.variable} ${type_mono.variable} ${type_second.variable}`}
+      >
         <Providers>
           <div className="grid grid-rows-[auto_1fr] h-svh">
             <Header />
